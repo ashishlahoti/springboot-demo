@@ -1,0 +1,22 @@
+#APP SPECIFIC CUSTOM PROPERTIES
+app:
+  name: demo
+#LOGGING PROPERTIES
+logging:
+  level:
+    root: INFO
+#SPRING PROPETIES
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    driver-class-name: org.mariadb.jdbc.Driver    url: jdbc:mariadb://localhost:3306/mydb
+    username: DB_USER_NAME
+    password: ENCRYPTED_PASSWORD
+    hikari:      auto-commit: true
+      connection-timeout: 30000
+      idle-timeout: 600000
+      max-lifetime: 1800000
+      minimum-idle: 10
+      maximum-pool-size: 10
+  jpa:    generate-ddl: false
+    show-sql: false
