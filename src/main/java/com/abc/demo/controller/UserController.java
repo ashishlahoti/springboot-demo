@@ -1,5 +1,7 @@
 package com.abc.demo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,19 +14,24 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.abc.demo.model.User;
+import com.abc.demo.dao.entity.User;
+import com.abc.demo.model.query.UserQueryModel;
+import com.abc.demo.model.request.UserRequestModel;
 import com.abc.demo.service.UserService;
 
 @RestController
 @RequestMapping("/users")
 public class UserController {
+	
+	Logger logger = LoggerFactory.getLogger(UserController.class);
 
 	@Autowired
 	private UserService userService;
 	
 	@GetMapping
-	public Page<User> getAllUsers(Pageable pageable) {
-		return userService.getAllUsers(pageable);
+	public Page<User> getAllUsers(UserQueryModel userQueryModel, Pageable pageable) {
+		logger.info("GET ALL USERS CALLED");
+		return userService.getAllUsers(userQueryModel, pageable);
 	}
 	
 	@GetMapping("/{id}")
@@ -33,8 +40,8 @@ public class UserController {
 	}
 	
 	@PostMapping
-	public User createUser(User user) {
-		return userService.createUser(user);
+	public User createUser(UserRequestModel userRequestModel) {
+		return userService.createUser(userRequestModel);
 	}
 	
 	@DeleteMapping("/{id}")
