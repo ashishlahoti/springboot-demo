@@ -6,5 +6,5 @@ import lombok.Data;
 public class UserRequestModel {
 
 	private String name;
-	private int age;
+	private Integer age;
 }

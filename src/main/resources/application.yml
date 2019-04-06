@@ -28,4 +28,4 @@ spring:
   # Enabling H2 Console
   h2.console.enabled: true
   jpa:    generate-ddl: false
-    show-sql: false
+    show-sql: true
