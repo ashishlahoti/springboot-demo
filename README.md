@@ -1,5 +1,5 @@
 # springboot-demo
-This springboot demo project is using some very userful libraries which works very well with springboot and make your life very easy. Through this project i am trying to solve some challenges which i faced in my earlier development work.
+This springboot demo project is using jpa and web modules of spring boot to interact with database and exposing REST endpoints for distribution. It is using some userful libraries which works very well with springboot and makes your development easy.
 
 1. Database password encryption in application.properties / application.yml
 If you want to configure encrypted password in the application.properties or application.yml file then you need to configure DataSource bean by yourself. See __[PersistenceConfig.java](./src/main/java/com/abc/demo/config/PersistenceConfig.java)__. where you can decrypt the password using your own implemention and configure custom DataSource bean. 
