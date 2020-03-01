@@ -42,7 +42,15 @@ public class UserServiceImpl implements UserService {
 	}
 	
 	@Override
+	public User updateUser(Long id, UserRequestModel userRequestModel) {
+		User user = userRepository.save(userModelMapper.toUserEntity(userRequestModel));
+		user.setId(id);
+		return userRepository.save(userModelMapper.toUserEntity(userRequestModel));
+	}
+	
+	@Override
 	public void deleteUserById(Long id) {
 		userRepository.deleteById(id);
 	}
+	
 }

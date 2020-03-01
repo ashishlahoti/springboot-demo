@@ -5,6 +5,10 @@ This springboot demo project is using jpa and web modules of spring boot to inte
 If you want to configure encrypted password in the application.properties or application.yml file then you need to configure DataSource bean by yourself. See __[PersistenceConfig.java](./src/main/java/com/abc/demo/config/PersistenceConfig.java)__. where you can decrypt the password using your own implemention and configure custom DataSource bean. 
 
 2. Using Lombok library is very userful which auto generates getter/setter and implements toString() and hashCode() methods of your model libraries at compile time. It keeps the model classes neat and clean. See the usage of @Data annotation in entity __[User.java](./src/main/java/com/abc/demo/dao/entity/User.java)__ and model classes.
+You need to install lombok plugin in IDE tool. For eclipse download the lombok.jar from following link:-
+https://projectlombok.org/download
+From terminal execute the jar
+>java -jar lombok.jar
 
 3. Using Swagger library is very useful if you are creating REST endpoints. It generates a GUI for you to execute GET, POST, PUT, DELETE HTTP endpoints. Isn't that cool. GUI is accessible using following URL:- http://localhost:8080/swagger-ui.html
 
