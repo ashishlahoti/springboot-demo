@@ -8,18 +8,23 @@ app:
     base-package: com.abc.demo.controller
     contact-name: apisupportgroup
     contact-email: apisupportgroup@abc.com
+    logging:
+      enable: true
+      url-patterns: "/users/*"
 server:
   port: 8090
 logging:
   level:
     root: INFO
+    com.abc.demo: DEBUG
 spring:
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:mem:testdb
     username: DB_USER_NAME
     password: ENCRYPTED_PASSWORD
-    hikari:      auto-commit: true
+    hikari:
+      auto-commit: true
       connection-timeout: 30000
       idle-timeout: 600000
       max-lifetime: 1800000
@@ -27,5 +32,37 @@ spring:
       maximum-pool-size: 10
   # Enabling H2 Console
   h2.console.enabled: true
-  jpa:    generate-ddl: false
+  jpa:
+    generate-ddl: true
     show-sql: true
+person:
+  name: "ashish"
+  occupation: 'programmer'
+  age: 33
+  gpa: 3.5
+  fav_num: 1e+10
+  male: true
+  birthday: 1986-08-22
+  flaws: null
+  hobbies:
+    - bike riding
+    - watching movies
+    - online games
+    - cooking
+  movies: ["Dark Knight", "Spider Man Home Coming", "Thor"]
+  friends:
+    - name: "eve"
+      age: 28
+    - {name: "adam", age: 26}
+    -
+      name: "chloe"
+      age: 40
+  description: >
+    Lorem ipsum dolor sit amet,
+    consectetur adipiscing elit, sed
+    do eiusmod tempor incididunt ut
+    labore et dolore magna aliqua
+  signature: |
+    Thanks & Regards,
+    Ashish Kumar Lahoti
+    email - lahoti.ashish20@gmail.com
