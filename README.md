@@ -1,4 +1,4 @@
-![AppVersion-version](https://img.shields.io/badge/AppVersion-1.0.0-brightgreen.svg?style=flat)
+![GitHub lastest release version](https://img.shields.io/github/v/release/ashishlahoti/springboot-demo?label=AppVersion)
 ![GitHub contributors](https://img.shields.io/github/contributors/ashishlahoti/springboot-demo)
 ![GitHub last commit](https://img.shields.io/github/last-commit/ashishlahoti/springboot-demo)
 ![GitHub Release Date](https://img.shields.io/github/release-date/ashishlahoti/springboot-demo)
