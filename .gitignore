@@ -10,7 +10,6 @@
 .settings
 .springBeans
 .sts4-cache
-.markdown
 
 ### IntelliJ IDEA ###
 .idea
@@ -25,3 +24,5 @@
 /nbdist/
 /.nb-gradle/
 /build/
+
+/README.markdown

@@ -12,12 +12,15 @@ import com.abc.demo.config.PersonConfig;
 @RequestMapping("/config")
 public class ConfigController {
 
+	/* Define a set of properties in config class using @ConfigurationProperties */
 	@Autowired
 	private PersonConfig personConfig;
-	
+
+	/* Assign default value of property if value is not defined */
 	@Value("${person.flaws : No Flaws}")
 	private String flaws;
-	
+
+	/* Assign inline value of property */
 	@Value("This is inline property")
 	private String inlineProperty;
 
@@ -25,12 +28,12 @@ public class ConfigController {
 	private PersonConfig getPersonConfig() {
 		return personConfig;
 	}
-	
+
 	@GetMapping("/person/flaws")
 	private String getPersonFlaws() {
 		return flaws;
 	}
-	
+
 	@GetMapping("/inline")
 	private String getInlineProperty() {
 		return inlineProperty;

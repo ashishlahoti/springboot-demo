@@ -24,3 +24,11 @@ Using Swagger library is very useful if you are creating REST endpoints. It gene
 
 ### Mapstruct
 Mapstruct library is one of the best model-mapping library available in the market based on performance. It is useful to auto generate model mapping (e.g. DTO to entity, entity to DTO) classes at compile time and keeps your source code neat and clean. See how @Mapper(componentModel="spring") annotation is being usage in **[UserModelMapper.java](./src/main/java/com/abc/demo/model/mapper/UserModelMapper.java)** which generates UserModelMapperImpl.class file at compile time and also create a bean with name userModelMapper. Later this model mapper dependency is injected in **[UserServiceImpl.java](./src/main/java/com/abc/demo/service/UserServiceImpl.java)** using @Autowired annotation for model-mapping.
+
+### Logging
+1. Use @Slf4J annotation for logging
+2. Use **[ApiLoggingFilterConfig.java](./src/main/java/com/abc/demo/config/ApiLoggingFilterConfig.java)** to log HTTP Rest request and response for configurable url-patterns
+
+### Config
+1. Use @ConfigurationProperties to define a set of properties for e.g. **[PersonConfig.java](./src/main/java/com/abc/demo/config/PersonConfig.java)**
+2. Use @Value properties to define single property for e.g. **[ConfigController.java](./src/main/java/com/abc/demo/controller/ConfigController.java)**
