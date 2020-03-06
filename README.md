@@ -30,5 +30,5 @@ Mapstruct library is one of the best model-mapping library available in the mark
 2. Use **[ApiLoggingFilterConfig.java](./src/main/java/com/abc/demo/config/ApiLoggingFilterConfig.java)** to log HTTP Rest request and response for configurable url-patterns
 
 ### Config
-1. Use @ConfigurationProperties to define a set of properties for e.g. **[PersonConfig.java](./src/main/java/com/abc/demo/config/PersonConfig.java)**
+1. Use @ConfigurationProperties to define a set of properties for e.g. **[PersonConfig.java](./src/main/java/com/abc/demo/config/PersonConfig.java)** This configuration class file define all different type of properties string, int, boolean, float, double, list, object, multi-lile string, multi-line-indented string
 2. Use @Value properties to define single property for e.g. **[ConfigController.java](./src/main/java/com/abc/demo/controller/ConfigController.java)**
