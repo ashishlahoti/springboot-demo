@@ -1,3 +1,9 @@
+![AppVersion-version](https://img.shields.io/badge/AppVersion-1.0.0-brightgreen.svg?style=flat)
+![GitHub contributors](https://img.shields.io/github/contributors/ashishlahoti/springboot-demo)
+![GitHub last commit](https://img.shields.io/github/last-commit/ashishlahoti/springboot-demo)
+![GitHub Release Date](https://img.shields.io/github/release-date/ashishlahoti/springboot-demo)
+![GitHub All Releases](https://img.shields.io/github/downloads/ashishlahoti/springboot-demo/total)
+
 # Spring Boot Starter
 This springboot starter project is using jpa and web modules of spring boot to interact with database and exposing REST endpoints for distribution. It is using some userful libraries which works very well with springboot and makes your development easy.
 
