@@ -1,3 +1,4 @@
+#http://localhost:8080/actuator/info
 info:
   app:
     name: spring boot microservice
@@ -24,19 +25,24 @@ app:
     contact-email: apisupportgroup@abc.com
     logging:
       enable: true
-      url-patterns: "/users/*"
+      url-patterns: /users/*,/posts/*
+      requestIdParamName: reqId
 server:
   port: 8080
 logging:
   level:
     root: INFO
     com.abc.demo: DEBUG
+  pattern:
+    #console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
+    console: "%clr(%d{yyyy-MM-dd HH:mm:ss.SSS}){faint} %clr(${LOG_LEVEL_PATTERN:-%5p}) %clr(${PID:- }){magenta} %clr(---){faint} %clr([%8.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %X{REQUEST_ID} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}"
 spring:
   banner:
     location: classpath:banner.txt
   jackson:
     serialization:
-      indent_output: true
+      indent_output: false
+      FAIL_ON_EMPTY_BEANS: false
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
     url: jdbc:h2:mem:testdb
@@ -55,9 +61,9 @@ spring:
     generate-ddl: true
     show-sql: true
 person:
-  name: "ashish"
-  occupation: 'programmer'
-  age: 33
+  name: Ashish Kumar Lahoti
+  occupation: blogger
+  age: 34
   gpa: 3.5
   fav_num: 1e+10
   male: true
@@ -68,13 +74,21 @@ person:
     - watching movies
     - online games
     - cooking
-  movies: ["Dark Knight", "Spider Man Home Coming", "Thor"]
+  movies: ["Dark Knight", "Spider Man", "Thor"]
+  assets: {Car: 1, Bike: 2, Home: 1}
+  size:
+    t-shirt:
+      us: XL
+      uk: L
+    shoes:
+      us: 8.5
+      uk: 6.5 
   friends:
-    - name: "eve"
+    - name: "adam"
       age: 28
-    - {name: "adam", age: 26}
+    - {name: "ben", age: 26}
     -
-      name: "chloe"
+      name: "charlie"
       age: 40
   description: >
     Lorem ipsum dolor sit amet,
@@ -85,3 +99,14 @@ person:
     Thanks & Regards,
     Ashish Kumar Lahoti
     email - lahoti.ashish20@gmail.com
+management.endpoints.web.exposure.include: info,health,release-notes
+course1:
+  title: "How to use Spring @Value annotation"
+  duration: 30
+  rating: 4.5
+  page_views: 1e+10
+  trending: true
+  created_date: 2020-05-26
+  tags: Spring, Spring Boot, Annotation
+  
+

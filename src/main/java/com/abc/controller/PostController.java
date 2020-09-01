@@ -14,10 +14,11 @@ public class PostController {
 
 	@GetMapping
 	public List<Post> getAllPosts() {
-		return Arrays.asList(new Post[] {
-		     new Post(1, "post title 1", "post body 1"),
-		     new Post(2, "post title 2", "post body 2"),
-		     new Post(3, "post title 3", "post body 3")		     
+		
+		return Arrays.asList(new Post[] { 
+				new Post(1, "Spring Boot", "All about Spring boot microservice"),
+				new Post(2, "Java", "Learn Streams in Java"),
+				new Post(3, "JavaScript", "Whats new in ES6")		     
 		});
 	}
 }

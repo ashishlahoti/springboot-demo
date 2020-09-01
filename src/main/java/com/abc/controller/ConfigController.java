@@ -19,6 +19,7 @@ public class ConfigController {
 	/* Assign default value of property if value is not defined */
 	@Value("${person.flaws : No Flaws}")
 	private String flaws;
+	
 
 	/* Assign inline value of property */
 	@Value("This is inline property")
@@ -26,6 +27,7 @@ public class ConfigController {
 
 	@GetMapping("/person")
 	private PersonConfig getPersonConfig() {
+		System.out.println(personConfig);
 		return personConfig;
 	}
 

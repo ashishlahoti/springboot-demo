@@ -1,5 +1,8 @@
 package com.abc.config;
 
+import java.util.List;
+import java.util.Map;
+
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.context.annotation.Configuration;
 
@@ -14,19 +17,21 @@ public class PersonConfig {
 	private String occupation;
 	private int age;
 	private float gpa;
-	private double fav_num;
+	private double favNum;
 	private boolean male;
 	private String birthday;
 	private String flaws;
 	private String[] hobbies;
-	private String[] movies;
-	private Person[] friends;
+	private List<String> movies;
+	private Map<String, Integer> assets;
+	private Map<String, Map<String, String>> size;
+	private List<Friend> friends;
 	private String description;
 	private String signature;
 }
 
 @Data
-class Person {
+class Friend {
 	private String name;
 	private int age;
 }
